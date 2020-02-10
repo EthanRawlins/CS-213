@@ -1,0 +1,35 @@
+.form {
+   width: 70%;
+   background: rgba(0, 135, 255, 0.12);
+   color: black;
+   margin: auto;
+   text-align: center;
+}
+button:hover {
+   background-color: lightskyblue;
+}
+button:focus {
+   background-color: darkblue;
+   color: white;
+}
+h1 {
+   text-align: center;
+}
+.displayAjax {
+   width: 45%;
+   background-color: white;
+   margin: auto;
+}
+.displayJson {
+   width: 90%;
+   background-color: white;
+   margin: auto;
+}
+header {
+   background-color: darkblue;
+   color: white;
+}
+pre {
+   font-family: "Times New Roman";
+   text-align: center;
+}

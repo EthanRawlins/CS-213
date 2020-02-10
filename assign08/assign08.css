@@ -1,0 +1,88 @@
+.header1 {
+   text-align: center;
+   background-color: #753B00;
+   color: white;
+}
+footer {
+   text-align: center;
+   background-color: #753B00;
+   color: white;
+}
+body {
+   background-color: white;
+}
+ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: #753B00;
+   position: sticky;
+   top: 0;
+}
+li {
+   float: left;
+}
+li a {
+   display: inline-block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+}
+li a:hover:not(.active) {
+   background-color: #5F3000;
+}
+.active {
+   background: rgba(0, 135, 255, 0.90);
+}
+.center {
+   display: block;
+   margin: auto;
+   width: 10%;
+}
+.main {
+   margin-left: 210px;
+   padding: 0px 10px;
+}
+.flex-container {
+   display: flex;
+   flex-wrap: nowrap;
+   background: rgba(0, 135, 255, 0.9);
+   margin: auto;
+   justify-content: space-between;
+}
+.flex-container > div {
+   background-color: #F1F1F1;
+   width: 100px;
+   margin: 10px;
+   text-align: center;
+   line-height: 50px;
+   font-size: 20px;
+}
+.flex-container > p {
+   width: 90%;
+   margin: auto;
+   background-color: #F1F1F1;
+   padding: 10px 10px;
+}
+.flex-container > img {
+   width: 94%;
+   height: auto;
+   margin: auto;
+}
+.flex-container > h1 {
+   margin: auto;
+   color: white;
+}
+.flex-container > h3 {
+   margin: auto;
+   color: white;
+}
+.flex-container > h5 {
+   margin: auto;
+   color: white;
+}
+@media only screen and (min-width: 450px) {
+   width: 100%;
+}

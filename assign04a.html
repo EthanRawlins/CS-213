@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Innoventions Application</title>
+      <link rel="stylesheet" type="text/css" href="/~ethanrawlins/assign04.css">
+      <style type="text/css">
+         .center-image {
+            float: center;
+         }
+         .section {
+            font-size: 40px;
+            color: darkred;
+            padding: 50px;
+         }
+         h1 {
+            padding: 30px;
+         }
+         h2 {
+            background-color: #EFEFEF;
+            color: darkred;
+            font-size: 35px;
+         }
+         p {
+           background-color: #EFEFEF;
+           color: black;
+           font-size: 20px;
+         }
+         input:hover {
+            background-color: darkred;
+            color: white;
+         }
+         input:focus {
+            background-color: #EFEFEF;
+            color: black
+         }
+         select:hover {
+            background-color: darkred;
+            color: white;
+         }
+         select:focus {
+            background-color: #EFEFEF;
+            color: black;
+         }
+         textarea:hover {
+            background-color: darkred;
+            color: white;
+         }
+         textarea:focus {
+            background-color: #EFEFEF;
+            color: black;
+         }
+         .center {
+            text-align: center;
+         }
+         #top {}
+      </style>
+   </head>
+   <body>
+      <header id="top">
+        <h1>Innoventions, Inc.</h1>
+        <h2>Hiring Process</h2>
+      </header>
+      <div id="go-home">
+         <button class="button" onclick="window.location.href='/~ethanrawlins/assign04.html'">
+            <span>Back to Home</span>
+         </button>
+      </div>
+      <br> <hr> <br>
+      <div id="products">
+         <img class="center-image" src="/~ethanrawlins/work-for-us.jpg" class="image" alt="Factory worker with a piggy bank">
+         <h1 class="section">Looking for a new career?</h1>
+      </div>
+      <br> <hr> <br>
+      <h2>Look no further!</h2>
+      <p>Simply fill out the form below, and we will get back to you regarding your application.<br><br>Here at Innoventions, Inc., we take pride in providing quality products and service to our customers. To achieve this, we have started by providing quality materials and treatment to our employees. All our employees receive full benefits, including health, dental, and vision insurance, 401(k), and many other benefits.</p>
+      <br> <br>
+      <h1 style="background-color: darkred; color: white; text-align: center;">Apply to Innoventions, Inc.</h1>
+      <br> <br>
+
+      <form action="" style="background-color: #F4D5CF">
+         full name
+         <input type="text" size="50" maxlength="25" value="John H. Smith">
+         <br> <br> <br> <br> 
+         Select the position you wish to apply for
+         <br> <br>
+         <select name="positions">
+            <option value="alien">Alien Invasion Specialist</option>
+            <option value="zombie">Zombie Analyst</option>
+            <option value="tech">Technology Developer</option>
+            <option value="market">Marketing Expert</option>
+         </select>
+         <br> <br> <br> <br>
+         How did you hear about us?
+         <br> <br>
+         <input type="radio" name="contact" value="facebook">Facebook</input>
+         <br>
+         <input type="radio" name="contact" value="friend">Friend</input>
+         <br>
+         <input type="radio" name="contact" value="indeed">Indeed.com</input>
+         <br>
+         <input type="radio" name="contact" value="employer">Employer</input>
+         <br>
+         <input type="radio" name="contact" value="other">Other(please specify)</input>
+         <input type="text" size="30" maxlength="28" value="Please specify here">
+         <br> <br> <br> <br>
+         Please tell us about yourself (no more than 500 characters).
+         <br> <br>
+         <textarea name="about-you" rows="15" cols="80">Type here.</textarea>
+         <br> <br> <br> <br>
+         <input type="submit">
+         <input type="reset">
+      </form> 
+      <br> <br>
+      <p class="center"><a href="#top">Back to Top</a></p>
+      <footer>
+      <h6>Copyright reserved by Innovations, Incorporated&copy;, a division of Amazing Inventions Ltd. WorldWide.</h6>
+   </body>
+</html>

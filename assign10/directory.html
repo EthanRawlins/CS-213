@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title></title>
+      <link rel="stylesheet" type="text/css" href="/~ethanrawlins/assign10/assign10.css">
+      <script>
+         function jsonCallback() {
+            req = new XMLHttpRequest();
+            req.onreadystatechange = function() {
+               if(req.readyState == 4) {
+                  if(req.status == 200) {
+                     var parse = JSON.parse(req.responseText);
+                  var list = "<div style=\"background-color: #EFEFEF; margin: auto; width: 70%;\"><table><tr><th>File Name</th><th>File Type</th><th>CWD</th><th>Action</th></tr>\n";
+                     for(var i = 0; i < parse.length; ++i) {
+                        list += "<tr><td>" + parse[i].fileName + "</td><td>" + parse[i].fileType + "</td><td>" + parse[i].cwd + "</td><td><button class=\"button\" onclick=\"window.location='" + parse[i].fileName + "'\">Navigate</button></td></tr>";
+                     }
+                     document.getElementById("json").innerHTML = list + "</table></div>";
+                  }
+                  else {
+                     document.getElementById("json").innerHTML = "Could not retrieve file: file not found";
+                  }
+               }
+            };
+            req.open("GET", "assign10.php", true);
+            req.send(null);
+         }
+      </script>
+
+   </head>
+   <body onload="jsonCallback()">
+      <header>
+         <h1 style="font-size: 48px">Directory Listing</h1>
+      </header>
+      <pre id="json"></pre>
+      <div style="background-color: #F6E3D2">
+         <button class="button" onclick="window.location='assign10.html'">Back to PHP</button>
+      </div>
+   </body>
+</html>

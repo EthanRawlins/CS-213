@@ -1,0 +1,33 @@
+header {
+   background-color: tan;
+   color: black;
+   text-align: center; 
+}
+body {
+   background-color: #F6E3D2;
+}
+h2 {
+   text-align: center;
+}
+div {
+   width: 60%
+   margin-left: auto;
+   margin-right: auto;
+   background-color: tan;
+   color: black;
+   text-align: center;
+}
+.button {
+   text-align: center;
+   background-color: tan;
+}
+form {
+   background-color: tan;
+   margin-left: auto;
+   margin-right: auto;
+   width: 60%;
+}
+header {
+   text-align: center;
+   background-color: tan;
+}

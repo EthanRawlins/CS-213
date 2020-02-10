@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head>
+      <title>Festival Registration</title>
+      <script>
+         function time() {
+            var min = 0;
+            var opt = "";
+            for(var hour = 8; hour < 17 || min == 45; min == 45 ? ++hour : hour, min = (min+15)%60) {
+               var time  = (min == 0 ? hour+":00" : hour+":"+min);
+               opt += "<option value = \""+time+"\">"+time+"</option>";
+            }
+            document.getElementById("time").innerHTML += opt;
+         }
+         function validate(tag, id) {
+            switch(tag) {
+               case 'name':
+                  nameCheck(id);
+                  break;
+               case 'roomNum':
+                  roomNumCheck(tag);
+                  break;
+               case 'id':
+                  idCheck(id);
+                  break;
+               case 'all':
+                  //TODO
+                  if(nameCheck() && roomNumCheck() && idCheck()) {
+                     for(var i = 0; i < 5; ++i) {
+                        if(document.form[0].select[i].value == "err") {
+                           alert(document.form[0].select[i].value);
+                           return false;
+                        }
+                     }
+                     return true;
+                  }
+                  break;
+               default:
+                  alert("Wrong tag in validate()");
+                  break;
+            }
+         }
+         function nameCheck(id) {
+            var el = document.getElementById(id);
+            if(el.value == "") {
+               document.getElementById(id+"Err").innerHTML = "This field is required";
+               el.style = "border-color: red;";
+               return false;
+            }
+            else {
+               document.getElementById(id+"Err").innerHTML = "";
+               el.style = "border-color: initial;";
+               return true;
+            }
+         }
+         function roomNumCheck(id) {
+            var el = document.getElementById(id);
+            if(el.value.search(/^\d{3}$/)) {
+               document.getElementById(id+"Err").innerHTML = "Please only enter the number";
+               el.style = "border-color: red;";
+               return false;
+            }
+            else {
+               document.getElementById(id+"Err").innerHTML = "";
+               el.style = "border-color: initial;";
+               return true;
+            }
+         }
+         function idCheck(id) {
+            var el = document.getElementById(id);
+            if(el.value.search(/^\d{2}-\d{3}-\d{4}$/)) {
+               document.getElementById(id+"Err").innerHTML = "Invalid number. Enter as xx-xxx-xxxx";
+               el.style = "border-color: red;";
+               return false;
+            }
+            else {
+               document.getElementById(id+"Err").innerHTML = "";
+               el.style = "border-color: initial;";
+               return true;
+            }
+         }
+         function showS2() {
+            if(document.getElementById("type").value == "Duet") {
+               document.getElementById("s2").style.visibility = "visible";
+            }
+            else { document.getElementById("s2").style.visibility = "hidden"; }
+         }
+      </script>
+      <style>
+         h1 { text-align: center; }
+         h6 { color: red; margin: 0px; }
+         table { margin: 0px auto 0px auto; }
+         select, input { border-radius: 5px; padding: 2px; }
+         input[type=submit] {
+            margin: 10px;
+            background-color: #29487d;
+            color: white;
+            padding: 6px;
+            border: 0px;
+         }
+         input[type=reset] {
+            padding: 5px;
+         }
+         fieldset { border-radius: 5px; }
+      </style>
+   </head>
+   <body onload="time();">
+      <h1>BYU-Idaho Music Festival</h1>
+      <fieldset>
+         <legend>Registration</legend>
+      <form action="" onsubmit="return validate('all');" method="get">
+         <fieldset>
+            <legend>Performance Info</legend>
+            <table>
+               <tr>
+                  <th>Type:</th>
+                  <th>Building:</th>
+                  <th>Room #:</th>
+                  <th>Time Slot:</th>
+               </tr>
+               <tr>
+                  <td>
+                     <select id="type" name="type" onclick="showS2();" autofocus>
+                        <option value="Solo">Solo</option>
+                        <option value="Duet">Duet</option>
+                        <option value="Concerto">Concerto</option>
+                        <option value="err" selected>select</option>
+                     </select>
+                  </td>
+                  <td>
+                     <select name="bldg">
+                        <option value="Austin">Austin</option>
+                        <option value="BYU-Idaho Center">BYU-Idaho Center</option>
+                        <option value="Benson">Benson</option>
+                        <option value="Clarke">Clarke</option>
+                        <option value="Hinckley">Hinckley</option>
+                        <option value="Hart">Hart</option>
+                        <option value="Kimball">Kimball</option>
+                        <option value="Kirkham">Kirkham</option>
+                        <option value="Manwaring Center">Manwaring Center</option>
+                        <option value="McKay">McKay</option>
+                        <option value="Ricks">Ricks</option>
+                        <option value="Romney">Romney</option>
+                        <option value="Smith">Smith</option>
+                        <option value="Snow">Snow</option>
+                        <option value="Taylor">Taylor</option>
+                        <option value="err" selected>select</option>
+                     </select>
+                  </td>
+                  
+                  <td><h6 id="roomNumErr"></h6><input onblur="validate('roomNum')" id="roomNum" type="text" name="roomNum"></td>
+                  <td><select name="time" id="time"><option value="err">select</option></select></td>
+               </tr>
+            </table>
+         </fieldset>
+         <fieldset>
+            <legend>Student Info</legend>
+            <table>
+               <tr>
+                  <th></th>
+                  <th>First Name:</th>
+                  <th>Last Name:</th>
+                  <th>Student ID:</th>
+                  <th>Skill Level:</th>
+                  <th>Instrument:</th>
+               </tr>
+               <tr>
+                  <td>Student&nbsp;1:&nbsp;</td>
+                  <td><h6 id="firstNErr"></h6><input onblur="validate('name', 'firstN')" id="firstN" name="firstN" type="text"></td>
+                  <td><h6 id="lastNErr"></h6><input onblur="validate('name', 'lastN')" id="lastN" name="lastN" type="text"></td>
+                  <td><h6 id="idErr"></h6><input onblur="validate('id', 'id')" id="id" name="id" type="text"></td>
+                  <td>
+                     <select name="level">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Pre-Advanced">Pre-Advanced</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="err" selected>select</option>
+                     </select>
+                  </td>
+                  <td>
+                     <select name="instrument">
+                        <option value="Piano">Piano</option>
+                        <option value="Voice">Voice</option>
+                        <option value="String">String</option>
+                        <option value="Organ">Organ</option>
+                        <option value="Other">Other</option>
+                        <option selected>select</option>
+                     </select>
+                  </td>
+               </tr>
+               <tr id="s2" style="visibility: hidden;">
+                  <td>Student&nbsp;2:&nbsp;</td>
+                  <td><h6 id="s2firstNErr"></h6><input onblur="validate('name', 's2firstN')" id="s2firstN" name="s2firstN" type="text"></td>
+                  <td><h6 id="s2lastNErr"></h6><input onblur="validate('name', 's2lastN')" id="s2firstN" name="s2lastN" type="text"></td>
+                  <td><h6 id="s2idErr"></h6><input onblur="validate('id', 's2id')" id="s2id" name="s2id" type="text"></td>
+                  <td>
+                     <select name="s2level">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Pre-Advanced">Pre-Advanced</option>
+                        <option value="Advanced">Advanced</option>
+                        <option value="err" selected>select</option>
+                     </select>
+                  </td>
+                  <td>
+                     <select name="s2instrument">
+                        <option value="Piano">Piano</option>
+                        <option value="Voice">Voice</option>
+                        <option value="String">String</option>
+                        <option value="Organ">Organ</option>
+                        <option value="Other">Other</option>
+                        <option selected>select</option>
+                     </select>
+                  </td>
+               </tr>
+            </table>
+         </fieldset>
+         <input type="submit" value="REGISTER">
+         <input type="reset" value="CLEAR FORM">
+      </form>
+      </fieldset>
+   </body>
+</html>

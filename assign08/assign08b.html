@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Home | Willy Wonka</title>
+      <link rel="stylesheet" type="text/css" href="assign08.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+         .header {
+            text-align: center;
+            background-color: #753B00;
+            color: white;
+         }
+         .sidenav {
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 220px; left: 0px;
+            background: rgba(0, 135, 255, 0.9);
+            overflow-x: hidden;
+            padding: 8px 0;
+         }
+         .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+         }
+         .sidenav a:hover {
+            color: blue;
+         }
+         .main {
+            margin-left: 210px;
+            padding: 0px 10px;
+         }
+         .pic {
+            width: 60px;
+            height: auto;
+         }
+         #degree {}
+         #course {}
+         #grade {}
+         #top {}
+         @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+         }
+         body {
+            background-color: white;
+         }
+      </style>
+   </head>
+   <body>
+         <h1 id="top" class="header">Willy Wonka University</h1>
+         <ul class="ul">
+            <li><a href="assign08.html">Home</a></li>
+            <li><a href="assign08a.html">Student</a></li>
+            <li><a href="" class="active">Classes</a></li>
+            <li><a href="assign08c.html">Finances</a></li>
+         </ul>
+         <br>
+         <table style="width: 50%; margin: auto;">
+            <th><img src="wonka-bar.jpg" alt="Wonka bar picture" class="pic">
+            </th>
+            <th><img src="oompa-loompa.png" alt="Oompa Loompa picture" class="pic"></th>
+            <th id="degree"><img src="wonka-bar.jpg" alt="Wonka bar picture"class="pic"></th>
+         </table>
+      <div class="sidenav">
+         <a href="#degree">Degrees</a>
+         <a href="#course">Courses</a>
+         <a href="#grade">Grading</a>
+         <a href="#top">Top</a>
+      </div>
+      <br> <br>
+      <div class="main">
+         <div class="flex-container" style="flex-direction: column">
+            <h1>Degrees</h1>
+            <p>Currently, Willy Wonka University offers 5 degrees: Chocolate Development, Chocolate Making, Chocolate Sculpting, Candy Making, and Willy Wonka Historian. All the degrees are very important processes in keeping a company like Wonka, Inc. up and running.</p>
+            <h3>Chocolate Development</h3>
+            <p>Chocolate Development focuses on the ingredients and other factors that change the consistency, taste, and edibility of the chocolate.Those who graduate in this degree will be able to mix ingredients in perfect proportions to create the best chocolate in the world.</p>
+            <h3>Chocolate Making</h3>
+            <p>Chocolate Making focuses on pouring chocolate in the mold, and learning how to package and make the chocolate last after it has been made by the Chocolate Developers. These will be the building blocks for the Chocolate Sculptors</p>
+            <h3>Chocolate Sculpting</h3>
+            <p>Chocolate Sculpting focuses on creating unique sculptures out of the chocolate that the chocolate makers create for them.</p>
+            <h3>Candy Making</h3>
+            <p>Candy Making focuses on all the other candies besides chocolate. Wonka, Inc. has a large variety of candies that are almost equally as superb as is the chocolate.</p>
+            <h3>Willy Wonka Historian</h3>
+            <p>Willy Wonka Historians will keep the legacy of Mr. Wonka alive for generations to come, by passing down his trade secrets and recipes to those who will use them for the greater good.</p>
+            <h5 id="course">.....</h5>
+         </div>
+      </div>
+      <br> <br>
+      <div class="main">
+         <div class="flex-container" style="flex-direction: column">
+            <h1>Courses</h1>
+            <p>Each degree has a set of 3 courses that will all be taken simultaneously for a total of 5 years. After this time, the graduates will be ready to take the place of their oompa loompa teachers in the factory.</p>
+            <h3>Chocolate Development</h3>
+            <p>The first Chocolate Development course focuses on recipes. The second course focuses on smelling the ingredients to determine quality. The third course focuses on catching defects in the chocolate.</p>
+            <h3>Chocolate Making</h3>
+            <p>The first Chocolate Making course focuses on the quality of molds, the second on the quality of the chocolate, and the third on finding imperfections.</p>
+            <h3>Chocolate Sculpting</h3>
+            <p>The Chocolate Sculpting courses focuses first on quality of sculpting blocks, then on learning how to use the sculpting tools, then on Wonka style.</p>
+            <h3>Candy Making</h3>
+            <p>Candy making focuses first on taffy, then on hard candy, then on gum.</p>
+            <h3>Willy Wonka Historian</h3>
+            <p>Willy Wonka Historian courses teach about Mr. Wonka's childhood, then his company, Wonka, Inc., then on his recipes.</p>
+            <h5 id="grade">.....</h5>
+         </div>
+      </div>
+      <br> <br>
+      <div class="main">
+         <div class="flex-container" style="flex-direction: column">
+            <h1>Grading</h1>
+            <p>All grading will be Pass/Fail, strictly based on quality of work and products.</p>
+            <h5 id="grade">.....</h5>
+         </div>
+      </div>
+      <footer>
+         <h6>Website designed by Oompa Loompa #347, using Wonka's chocolate computer. Copyright 2019.</h6>
+      </footer>
+   </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script>
+         var url = "/~ercanbracks/studentList.html";
+
+         function callback() {
+            req=new XMLHttpRequest();
+            if(!req) {
+               alert('Error: Your browser is stupid.');
+               return false;
+            }
+            else {
+               req.onreadystatechange= display;
+               req.open("GET", url, true);
+               req.send(null); 
+            }
+         }
+         function display() {
+            document.getElementById("div").innerHTML= req.responseText;
+         }
+      </script>
+
+   </head>
+   <body onload="callback()"><p>Your request has been processed.</p>
+      <div id="div">
+      </div>
+   </body>
+</html>

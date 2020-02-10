@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Home | Willy Wonka</title>
+      <link rel="stylesheet" type="text/css" href="assign08.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+         .header {
+            text-align: center;
+            background-color: #753B00;
+            color: white;
+         }
+         .sidenav {
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 220px; left: 0px;
+            0px;
+            background: rgba(0, 135, 255, 0.9);
+            overflow-x: hidden;
+            padding: 8px 0;
+         }
+         .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+         }
+         .sidenav a:hover {
+            color: blue;
+         }
+         .main {
+            margin-left: 210px;
+            padding: 0px 10px;
+         }
+         .pic {
+            width: 60px;
+            height: auto;
+         }
+         #scholar {}
+         #top {}
+         #app {}
+         #fafsa {}
+         @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+         }
+         body {
+            background-color: white;
+         }
+      </style>
+   </head>
+   <body>
+         <h1 id="top" class="header">Willy Wonka University</h1>
+         <ul class="ul">
+            <li><a href="assign08.html">Home</a></li>
+            <li><a href="assign08a.html">Student</a></li>
+            <li><a href="assign08b.html">Classes</a></li>
+            <li><a href="" class="active">Finances</a></li>
+         </ul>
+         <br>
+         <table style="width: 50%; margin: auto;">
+            <th><img src="wonka-bar.jpg" alt="Wonka bar picture" class="pic">
+            </th>
+            <th><img src="oompa-loompa.png" alt="Oompa Loompa picture" class="pic"></th>
+            <th id="scholar"><img src="wonka-bar.jpg" alt="Wonka bar picture"class="pic"></th>
+         </table>
+      <div class="sidenav">
+         <a href="#scholar">Scholarships</a>
+         <a href="#app">Applications</a>
+         <a href="#aid">Federal Aid</a>
+         <a href="#top">Top</a>
+      </div>
+      <br> <br>
+      <div class="main">
+         <div class="flex-container" style="flex-direction: column">
+            <h1>Scholarships</h1>
+            <p>There is only one scholarship, and you need a Golden Ticket to obtain it. It entails full tuition and housing, all expenses paid. Oh, and it also comes with the entirety of the Wonka, Inc. company and factory. Start looking!</p>
+            <h5 id="app">.....</h5>
+         </div>
+      </div>
+      <br> <br>
+      <div class="main">
+         <div class="flex-container" style="flex-direction: column">
+            <h1>Applications</h1>
+            <p>All applications must me made by mail to:</p>
+            <p style="text-align: center">Wonka Inc.</p>
+            <p style="text-align: center">123 Chocolate Ave.</p>
+            <p style="text-align: center">London, England</p>
+            <p>Please include a resume, a cover letter, and a proof of loyalty.</p>
+            <h5 id="fafsa">.....</h5>
+         </div>
+      </div>
+      <br> <br>
+      <div class="main">
+         <div class="flex-container" style="flex-direction: column">
+            <h1>Federal Aid</h1>
+            <p>If you wish to use Federal Aid to pay for your schooling, please see:</p>
+            <a href="https://studentaid.ed.gov/sa/fafsa" style="background-color: #F1F1F1; text-align: center; width: 94%; margin: auto;">Fafsa Application</a>
+            <h5 id="app">.....</h5>
+         </div>
+      </div>
+      <br> <br>
+      <footer>
+         <h6>Website designed by Oompa Loompa #347, using Wonka's chocolate computer. Copyright 2019.</h6>
+      </footer>
+   </body>
+</html>

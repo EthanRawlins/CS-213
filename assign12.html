@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Distance Calculator</title>
+      <link rel="stylesheet" type="text/css" href="assign12.css">
+      <script>
+         function ajaxReq() {
+            var url="/cgi-bin/cs213/mileageAjaxJSON";
+            var sc = document.getElementById("sc").value;
+            var ss = document.getElementById("ss").value;
+            var ec = document.getElementById("ec").value;
+            var es = document.getElementById("es").value;
+            if(sc == "" || ss == "" || ec == "" || es == "") {
+               document.getElementById("err").style.visibility = "visible";
+               document.getElementById("err").style.color = "red";
+               return;
+            }
+            else {
+               document.getElementById("err").style.visibility = "hidden";
+            url = url + "?startCity=" + sc + "&startState=" + ss + "&endCity=" + ec + "&endState=" + es;
+            req=new XMLHttpRequest();
+            if(!req) {
+               alert('Error with AJAX request!');
+               return false;
+            }
+            else {
+               req.onreadystatechange = function() {
+                  if(req.readyState == 4) {
+                     if(req.status == 200) {
+                        var parse = JSON.parse(req.responseText);
+                        var list = "<tr><td class=\"td\">" + sc + ", " + ss + "</td class=\"td\">" + "<td class=\"td\">" + ec + ", " + es + "</td>" + "<td class=\"td\">" + parse.trip.miles +"</td></tr>";
+                        document.getElementById("div1").innerHTML += list;
+                        document.getElementById("div1").style.visibility="visible";
+                     }
+                  }
+               };
+               req.open("GET", url, true);
+               req.send(null);
+            }
+         }
+         }
+         /*if(myObj.trip.tmode != undefined) {
+            for(i=0; i< myObj.trip.tmode.length; i++) {
+               = myObj.trip.tmode[i];
+            }
+         }*/
+      </script>
+   </head>
+   <body>
+      <header>
+         <h1>Distance Calculator</h1>
+      </header>
+      <div>
+      <p style="font-size: 20px">This tool can calculate the distance between any 2 cities in the database provided.</p>
+      <table style="margin: auto; text-align: left;">
+         <tr>
+            <td class="td1">Start City</td>
+            <td class="td1"><input type="text" id="sc" name="startCity" autofocus value="" placeholder="Start City" value=""></td>
+         </tr>
+         <tr>
+            <td class="td1">Start State</td>
+            <td class="td1"><input type="text" id="ss" name="startState" size="3" maxlength="2" placeholder="XX" value=""></td>
+            </tr>
+         <tr>
+            <td class="td1">End City</td>
+            <td class="td1"><input type="text" id="ec" name="endCity" placeholder="End City" value=""></td>
+         </tr>
+         <tr>
+            <td class="td1">End State</td>
+            <td class="td1"><input type="text" id="es" name="endState" size="3" maxlength="2" placeholder="XX"></td>
+         </tr>
+      </table>
+      <br> <br>
+      <button onclick="ajaxReq()"><b>Calculate Distance</b></button>
+      <p id="err" style="visibility: hidden;"><b>Please fill out All Fields!</b></p>
+         <table id="div1" class="table" style="visibility: hidden">
+            <tr>
+               <th>Starting City</th>
+               <th>Ending City</th>
+               <th>Distance (miles)</th>
+            </tr>
+         </table>
+         <br>
+      </div>
+      <br>
+   </body>
+</html>

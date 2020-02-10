@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Mileage Calculator</title>
+      <link rel="stylesheet" type="text/css" href="assign12.css">
+      <script src="jquery.js"></script>
+      <script>
+         $(document).ready(function(){
+            $("button").click(function(){
+               //$("#div1").load("/cgi-bin/cs213/mileageAjaxJSON");
+               $("#div1").load("test.txt");
+            });
+         });
+         /*if(myObj.trip.tmode != undefined) {
+            for(i=0; i< myObj.trip.tmode.length; i++) {
+               = myObj.trip.tmode[i];
+            }
+         }*/
+      </script>
+   </head>
+   <body>
+      <header>
+         <h1>Mileage Calculator</h1>
+      </header>
+      <div>
+      Start City
+      <input type="text" name="startCity" value="" placeholder="Start City" value="">
+      <br> <br>
+      Start State
+      <input type="text" name="startState" size="3" maxlength="2" placeholder="XX" value="">
+      <br> <br>
+      End City
+      <input type="text" name="endCity" placeholder="End City" value="">
+      <br> <br>
+      End State
+      <input type="text" name="endState" size="3" maxlength="2" placeholder="XX">
+      <br> <br>
+      <button><b>Calculate Distance</b></button>
+      </div>
+      <br>
+      <div id="div1"><h2>hello</h2></div>
+   </body>
+</html>

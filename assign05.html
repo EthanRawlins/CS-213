@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Mortgage Calculator</title>
+      <link rel="stylesheet" type="text/css" href="/~ethanrawlins/assign05.css">
+   </head>
+      <body>
+         <header>
+            <h1>Mortgage Calculator</h1>
+         </header>
+         <h2 id="payment">Monthly Payment: $0.00</h2>
+         <form action="">
+            Your APR (Annual Percentage Rate) 
+            <input id="apr" type="number" size="5" maxlength="6" value="">
+            % <br> <br>
+            Loan Term (in years) 
+            <input id="term" type="number" size="1" maxlength="2" value="">
+            <br> <br>
+            Loan Amount (in dollars) $
+            <input id="amount" type="number" size="15" maxlength="15" value="">
+            <br> <br>
+            <script>
+               window.onload=aprFocus();
+               function displayMonthlyPayment() {
+                  var apr = document.getElementById("apr").value;
+                  var term = document.getElementById("term").value;
+                  var amount = document.getElementById("amount").value;
+                  apr *= 1;
+                  term *= 1;
+                  amount *= 1;
+                  document.getElementById("apr").onchange=function() {displayMonthlyPayment()};
+                  document.getElementById("term").onchange=function() {displayMonthlyPayment()};
+                  document.getElementById("amount").onchange=function() {displayMonthlyPayment()};
+                  if (apr == "") {
+                     window.alert("Please fill out all fields to contintue.");
+                     aprFocus();
+                     return;
+                  }
+                  if (term == "") {
+                     window.alert("Please fill out all fields to contintue.");
+                     termFocus();
+                     return;
+                  }
+                  if (amount == "") {
+                     window.alert("Please fill out all fields to contintue.");
+                     amountFocus();
+                     return;
+                  }
+
+                  if (apr < 0 || apr > 25) {
+                     window.alert("APR must be between 0 and 25.00");
+                     aprFocus();
+                     return;
+                  }
+                  if (term < 0 || term > 40) {
+                     window.alert("Loan Term must be within 0 and 40");
+                     termFocus();
+                     return;
+                  }
+                  apr /= 1200;
+                  term *= 12;
+
+                  var total = amount*(apr*Math.pow((1+apr), term))/(Math.pow((1+apr), term) - 1);
+
+                  document.getElementById("payment").innerHTML="Monthly Payment: $"+total.toFixed(2);
+               }
+               function aprFocus() {
+                  document.getElementById("apr").focus();
+               }
+               function termFocus() {
+                  document.getElementById("term").focus();
+               }
+               function amountFocus() {
+                  document.getElementById("amount").focus();
+               }
+
+
+            </script>
+            <button class="button" type="button" onclick="displayMonthlyPayment()">Calculate Monthly Payment</button>
+            <button class="button" type="reset" onclick="aprFocus()">Clear Form</button>
+         </form>
+      </body>
+</html>

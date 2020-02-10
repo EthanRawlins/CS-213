@@ -1,0 +1,47 @@
+body {
+   background-color: #D8F2FF;
+   margin: auto;
+}
+div {
+   text-align: center;
+   width: 80%;
+   margin: auto;
+   border-style: solid;
+}
+header {
+   background-color: #1D73C3;
+   text-align: center;
+   margin: auto;
+   color: white;
+   width: 40%;
+   min-width: 280px;
+}
+button {
+   background-color: #1D73C3;
+   color: white;
+   border-radius: 14px;
+}
+button:hover {
+   color: #1D73C3;
+   background-color: white;
+   transition-duration: 0.2s;
+   cursor: pointer;
+}
+p {
+   font-size: 14px;
+}
+.table {
+   margin: auto;
+   background-color: #EFEFEF;
+   width: 80%;
+   border-style: solid;
+   padding: 3%;
+}
+.td {
+   border-style: solid;
+   border-width: 1px;
+}
+.td1 {
+   font-size: 26px;
+}
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Ethan Rawlins 2.0</title>
+      <style type="text/css">
+         body {background-color: lightblue;}
+         header {
+         background-color: navy;
+         padding: 0px;
+         text-align: center;
+         font-size: 50px;
+         color: white;
+         font-family: courier;
+         }
+      footer {
+         background-color: navy;
+         text-align: center;
+         color: white;
+         }
+      table, th, td {
+         border: 1px solid black;
+         border-collapse: collapse;
+         text-align: center;
+         }
+      form {text-align: center;}
+      .center {text-align: center;}
+      .text {
+         background-color: powderblue;
+         color: black;
+         }
+      .text:first-letter {
+         color: blue;
+         font-size: xx-large;
+         }
+      .text>i {color: blue;}
+      .button {
+         background-color: dodgerblue;
+         border: 1px solid white;
+         color: black;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 20px;
+         border-radius: 15px;
+         transition-duration: 0.4s;
+         cursor: pointer;
+         }
+      .button:hover {
+         background-color: blue;
+         color: white;
+         box-shadow: 0 6px 11px 0 rgba(0,0,0,0.15), 0 6px 15px 0 rgba(0,0,0,0.10);
+         }
+      input:hover {background-color: blue;}
+      input:focus {background-color: lightskyblue;}
+      select:hover {background-color: blue;}
+      select:focus {background-color: lightskyblue;}
+      textarea:hover {background-color: blue;}
+      textarea:focus {background-color: lightskyblue;}
+
+      #center_link, #center_img, #center_logo {
+         display: flex;
+         justify-content: center;
+         text-align: center;
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1 id="top">Ethan Rawlins</h1>
+         <a id="center_logo" href="https://www.linkedin.com/in/ethan-rawlins-a85190129">
+         <img src="linkedin.jpg" alt="linked-in logo" style="width:42px;height:42px;">
+         </a>
+      </header>
+      <h5 style="text-align: center; font-size: 16px; font-family: courier;">Ethan Rawlins is from <b>Virginia</b> and is studying with a <u>Software Engineering</u> major.</h5>
+      <div id="center_link">
+         <button class="button" onclick="window.location.href='/~ethanrawlins/index.html'">
+            <span>CS 213 Assignments</span>
+         </button>
+         <hr>
+         <button class="button" onclick="window.location.href='https://emp.byui.edu/ercanbracks/cs213/Assignments/cs213_03_homePage2.htm'">
+            <span>Assignment 03 Requirements</span>
+         </button>
+         <hr>
+         <button class="button" onclick="window.location.href='https://www.w3schools.com/html/default.asp'">
+            <span>w3schools.com</span>
+         </button>
+      </div>
+      <br>
+      <p class="center"><a href="#form">Jump to Form</a></p>
+      <hr>
+      <br> <br>
+      <div id="center_img">
+         <img src="download.jpg" alt="Nature Pic" width="315" height="175">
+      </div>
+      <br>
+      <blockquote style="font-family: arial; text-align: center;" cite="https://www.lds.org/scriptures/nt/philip/4?lang=eng">"I can do all things through Christ which strengtheneth me." (<i>Phillip. 4:13</i>)</blockquote>
+      <hr>
+      <h3 style="text-align: center; font-size: 25px;">Paragraphs</h3>
+      <p class="text">This is a standard text <b>paragraph</b>. It contains many different words that make up <i>sentences</i>. <b>Paragraphs</b> are comprised of a combination of <i>sentences</i> ranging in a wide variety of <i>sentences</i> they contain. A single <b>paragraph</b> can have as many or as few <i>sentences</i> as the author desires.</p>
+      <hr>
+      <br>
+      <p id="form" class="center">Please fill out the following form to replace a class from your schedule.</p>
+      <br>
+      <form action="">
+         first name:
+         <input type="text" size="25" maxlength="22">
+         last name:
+         <input type="text" size="25" maxlength="22">
+         <br> <br> <br>
+         <table style="width: 100%">
+            <caption><b>Course Schedule</b></caption>
+            <tr>
+               <th>Course #</th>
+               <th>Course Description</th>
+               <th>Section #</th>
+               <th>Class Time</th>
+               <th>Class Location</th>
+               <th>Replace? (choose only 1)</th>
+            </tr>
+
+            <tr>
+               <td>CS308</td>
+               <td>Technical Communication</td>
+               <td>1</td>
+               <td>MTWR 9:00-10:00 AM</td>
+               <td>STC 385</td>
+               <td><input type="radio" name="course"></td>
+            </tr>
+
+            <tr>
+               <td>FDENG 301</td>
+               <td>Advanced Writing and Research</td>
+               <td>15</td>
+               <td>MWF 10:15-11:15 AM</td>
+               <td>SMI 346</td>
+               <td><input type="radio" name="course"></td>
+            </tr>
+
+            <tr>
+               <td>ECEN 160</td>
+               <td>Fundamentals of Digital Systems</td>
+               <td>3</td>
+               <td>MW 3:15-5:30 PM</td>
+               <td>STC 398</td>
+               <td><input type="radio" name="course"></td>
+            </tr>
+
+            <tr>
+               <td>CS 213</td>
+               <td>Web Engineering 1</td>
+               <td>2</td>
+               <td>TR 3:15-4:45</td>
+               <td>STC 347</td>
+               <td><input type="radio" name="course"></td>
+            </tr>
+
+            <tr>
+               <td>FDREL 200</td>
+               <td>The Eternal Family</td>
+               <td>40</td>
+               <td>-0:00-0:00 AM</td>
+               <td>Online</td>
+               <td><input type="radio" name="course"></td>
+            </tr>
+         </table>
+         <br> <br>
+         <h4>Please state your reason for switching selected course(select all that apply).</h4>
+         <input type="checkbox" name="reason">
+         Didn't like class <br>
+         <input type="checkbox" name="reason">
+         Didn't understand material <br>
+         <input type="checkbox" name="reason">
+         Don't want to continue college <br>
+         <input type="checkbox" name="reason">
+         Other (please specify) <br>
+         <textarea name="other" rows="10" cols="30">type here</textarea>
+         <br> <br> Choose a course to switch to:
+         <select name="courses">
+            <option value="cs124">CS124</option>
+            <option value="cs165">CS165</option>
+            <option value="fdrel175">FDREL175</option>
+            <option value="sci101">SCI101</option>
+            </select>
+         <br> <br> <br> <br>
+
+         <input type="submit">
+         <input type="reset">
+      </form>
+      <br> <br>
+      <p class="center"><a href="#top">Jump to top</a></p>
+      <footer>
+         <h6>This website is brought to you by Ethan Rawlins, after much time and effort.</h6>
+      </footer>
+   </body>
+</html>

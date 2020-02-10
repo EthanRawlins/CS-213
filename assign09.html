@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Ajax and JSON</title>
+      <link rel="stylesheet" type="text/css" href="/~ethanrawlins/assign09.css">
+      <script>
+         var url="/~ercanbracks/usa.txt";
+         function choice() {
+            url=document.getElementById("choice").value;
+         }
+         function ajaxCallback() {
+            url=document.getElementById("choice").value;
+            req=new XMLHttpRequest();
+            if(!req) {
+               alert('Error: Your browser is stupid.');
+               return false;
+            }
+            else {
+               req.onreadystatechange = function() {document.getElementById("ajax").innerHTML = req.responseText};
+               req.open("GET", url, true);
+               req.send(null); 
+            }
+         }
+         function jsonCallback() {
+            var fileName = document.getElementById("in").value;
+            req = new XMLHttpRequest();
+            req.onreadystatechange = function() {
+               if(req.readyState == 4) {
+                  if(req.status == 200) {
+                     var parse = JSON.parse(req.responseText);
+                     var list = "<table><tr><th>Last name, First</th><th>Address</th><th>Major</th><th>GPA</th></tr>\n";
+                     for(var i = 0; i < parse.students.length; ++i) {
+                        list += "<tr><td>" + parse.students[i].last + ", " + parse.students[i].first + "</td><td>" + parse.students[i].address.city + " " + parse.students[i].address.state + " " + parse.students[i].address.zip + "</td><td>" + parse.students[i].major + "</td><td>" + parse.students[i].gpa + "</td></tr>";
+                     }
+                     document.getElementById("json").innerHTML = list + "</table>";
+                  }
+                  else {
+                     document.getElementById("json").innerHTML = "Could not retrieve file: file not found";
+                  }
+               }
+            };
+            req.open("GET", fileName, true);
+            req.send(null);
+         }
+         function displayBoth() {
+            ajaxCallback();
+            jsonCallback();
+         }
+      </script>
+
+   </head>
+   <body onload = "ajaxCallback()">
+      <header>
+         <h1 style="font-size: 48px">Ajax and JSON</h1>
+      </header>
+      <div class="form">
+         <h1>Display Cities Using AJAX</h1>
+            <select id="choice" onchange="ajaxCallback()">
+               <option selected value="/~ercanbracks/usa.txt">US</option>
+               <option value="/~ercanbracks/mexico.txt">Mexico</option>
+               <option value="/~ercanbracks/canada.txt">Canada</option>
+               <option value="/~ercanbracks/russia.txt">Russia</option>
+            </select>
+         <br>
+         <div class="displayAjax">
+            <pre id="ajax"></pre>
+         </div>
+         <br>
+      </div>
+      <div class="form">
+         <h1>Display Students Using JSON</h1>
+         <br>
+         File name: 
+         <input id="in" type="text" size="10" maxlength="20" value="json.txt">
+         <button onclick="jsonCallback()">Display</button>
+         <div class="displayJson">
+            <pre id="json"></pre>
+         </div>
+         <br>
+      </div>
+   </body>
+</html>
